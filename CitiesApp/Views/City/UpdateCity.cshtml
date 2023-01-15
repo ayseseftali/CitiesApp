@@ -1,0 +1,31 @@
+﻿@model CitiesApp.Models.City
+
+@{
+    ViewData["Title"] = "Güncelle";
+}
+
+<h1>Şehir Güncelle</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" enctype="multipart/form-data" asp-controller="City" asp-action="UpdateCity">
+            <div class="form-group">
+                <input type="hidden" asp-for="Id" class="form-control" value="@Model?.Id" />
+                <label class="control-label" for="cityName">Şehir Adı</label>
+                <input class="form-control" asp-for="SehirAdi" value="@Model?.SehirAdi" />
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="countryName">Ülke Adı</label>
+                <input class="form-control" asp-for="UlkeAdi"  value="@Model?.UlkeAdi" />
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Güncelle" class="btn btn-md btn-success" />
+            </div>
+        </form>
+
+        <div>
+            <a asp-action="Index">Geri Dön</a>
+        </div>
+    </div>
+</div>

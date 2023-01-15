@@ -1,0 +1,30 @@
+﻿@model CitiesApp.Models.City
+
+@{
+    ViewData["Title"] = "Ekle";
+}
+
+<h1>Şehir Ekle</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" enctype="multipart/form-data" asp-controller="City" asp-action="AddCity">
+            <div class="form-group">
+                <label class="control-label" for="cityName">Şehir Adı</label>
+                <input asp-for="SehirAdi" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="countryName">Ülke Adı</label>
+                <input asp-for="UlkeAdi" class="form-control"/>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Ekle" class="btn btn-md btn-success" />
+            </div>
+        </form>
+
+        <div>
+            <a asp-action="Index">Geri Dön</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+﻿@using System.Data
+@{
+    ViewData["Title"] = "Şehirler";
+}
+
+<table class="table table-striped table-hover table-striped">
+    <tr><a href="@Url.Action("AddCity","City")" class="btn btn-md btn-success">Ekle</a></tr>
+     <tr>  
+        <th>Id </th>  
+        <th>Şehir Adı</th>  
+        <th>Ülke Adı</th>  
+    </tr>  
+    @foreach (DataRow row in Model.Rows)
+    {
+         <tr>
+             <td>@row["id"]</td>
+             <td>@row["sehirAdi"]</td>
+             <td>@row["ulkeAdi"]</td>
+             <td><a href="@Url.Action("UpdateCity","City",new { id=@row["id"]})" class="btn btn-md btn-warning">Güncelle</a></td>
+             <td><a href="@Url.Action("DeleteCity","City",new { id=@row["id"]})" class="btn btn-md btn-danger">Sil</a></td>
+         </tr>
+    }
+</table>
